@@ -1,0 +1,26 @@
+description: Read-only ChatGPT context for code analysis and Git review.
+prompt: |
+  This context is intended for codebase analysis, planning and implementation review.
+  Prefer semantic code navigation tools for understanding code.
+  Use Git tools to inspect repository state and implementation changes.
+  Do not modify project files or Git repository state.
+fixed_tools:
+  - activate_project
+  - get_current_config
+  - get_symbols_overview
+  - find_symbol
+  - find_referencing_symbols
+  - search_for_pattern
+  - read_file
+  - find_file
+  - list_dir
+  - git_status
+  - git_diff
+  - git_log
+  - git_show
+  - git_branch
+  - git_worktree_list
+single_project: false
+excluded_tools: []
+included_optional_tools: []
+tool_description_overrides: {}
