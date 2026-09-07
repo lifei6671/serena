@@ -36,6 +36,7 @@ class _GitToolBase(Tool, ToolMarkerOptional):
                 ["git", "-C", str(root), *args],
                 check=False,
                 capture_output=True,
+                stdin=subprocess.DEVNULL,
                 env=env,
                 timeout=10,
                 shell=False,
