@@ -7,7 +7,7 @@ on:
 
 jobs:
   create-release:
-    name: Create a candidate release
+    name: Create GitHub Release
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,5 +15,5 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v3
         with:
-          draft: true
-          body: "See [change log](https://github.com/oraios/serena/blob/main/CHANGELOG.md)"
+          draft: ${{ github.repository == 'oraios/serena' }}
+          body: "See [change log](${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGELOG.md)"
